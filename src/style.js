@@ -6,7 +6,9 @@ export const theme = {
         hover: '#b4c3e8',
         light: '#ced7ef'
     },
-
+    background: {
+        dark: '#424247',
+    },
     font: {
         main: 'Raleway',
         title: 'Cabin Sketch',
