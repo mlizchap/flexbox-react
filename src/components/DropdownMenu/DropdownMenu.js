@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-const test = ["a", "b", "c"]
+import PropTypes from 'prop-types';
 
 class DropdownMenu extends Component {
     constructor(props) {
@@ -25,7 +24,7 @@ class DropdownMenu extends Component {
         return (
             <StyledDropDownMenu>
                 <div onMouseLeave={this.hideContent}>
-                    <div className="dropDownHeader">{this.props.header.toUpperCase()}</div>
+                    <span className="topHeader">{this.props.header.toUpperCase()}</span>
                     <button className="toggleBtn" onClick={this.toggleContent}>
                         <div className="buttonDisplay">
                             <span className="text">{ this.state.selected || this.props.content[0] }</span>
@@ -53,25 +52,33 @@ class DropdownMenu extends Component {
 
 export default DropdownMenu;
 
+DropdownMenu.PropTypes = {
+    header: PropTypes.string,
+    content: PropTypes.array,
+    handleSelectItem: PropTypes.func,
+    hasHeader: PropTypes.bool
+}
+
 const StyledDropDownMenu = styled.div`
-    width: 150px;
-    .dropDownHeader {
+    width: 80%;
+    .topHeader {
+        width: 100%;
+        display: inline-block;
         background-color: ${props => props.theme.blue.dark};
         color: ${props => props.theme.blue.light};
-        padding: 3px;
+        padding: 2px 0px;
         font-size: 10pt;
         font-family: ${props => props.theme.font.title};
         letter-spacing: .06rem;
     }
     .toggleBtn {
-        width: 150px;
+        width: 100%;
         border: none;
-        // border-radius: 4px;
         font-family: ${props => props.theme.font.main};
         padding: 5px;
         background-color: ${props => props.theme.blue.main};
         color: ${props => props.theme.blue.dark};
-        font-size: 12pt;
+        font-size: 10pt;
         &:hover {
             cursor: pointer;
             background-color: ${props => props.theme.blue.hover};
@@ -85,7 +92,7 @@ const StyledDropDownMenu = styled.div`
     }
     .content {
         position: absolute;
-        width: 150px;
+        width: 80%;
         font-size: 10pt;
         font-family: ${props => props.theme.font.main};
     }

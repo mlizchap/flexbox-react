@@ -12,6 +12,12 @@ export const theme = {
     font: {
         main: 'Raleway',
         title: 'Cabin Sketch',
+    },
+    axis: {
+        mainLight: `#ffdbdb`,
+        crossLight: `#ffedd8`,
+        mainDark: '#e28c8c',
+        crossDark: `#f7b879`,
     }
 
     // mainColor: '#5a6272',

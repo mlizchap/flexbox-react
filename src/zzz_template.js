@@ -1,7 +1,7 @@
-import { MyContext } from '../../Data/Provider';
+import { Context } from '../Provider';
 
 
-<MyContext.Consumer>
+<Context.Consumer>
     {context => {
         return (
             <div>
@@ -9,4 +9,4 @@ import { MyContext } from '../../Data/Provider';
             </div>
         )
     }}
-</MyContext.Consumer>
+</Context.Consumer>
