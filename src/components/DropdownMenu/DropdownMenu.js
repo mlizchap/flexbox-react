@@ -9,6 +9,7 @@ class DropdownMenu extends Component {
             selected: "",
             showContent: false
          };
+         this.width = React.createRef();
     }
     toggleContent = () => {
         this.setState({ showContent: !this.state.showContent });
@@ -22,16 +23,17 @@ class DropdownMenu extends Component {
     }
     render() {
         return (
-            <StyledDropDownMenu>
+            <StyledDropDownMenu {...this.props} >
                 <div onMouseLeave={this.hideContent}>
-                    <span className="topHeader">{this.props.header.toUpperCase()}</span>
-                    <button className="toggleBtn" onClick={this.toggleContent}>
+                    {(this.props.hasHeader) ? 
+                    <span className="topHeader">{this.props.header.toUpperCase()}</span> : null }
+                    <button className="toggleBtn" onClick={this.toggleContent} >
                         <div className="buttonDisplay">
                             <span className="text">{ this.state.selected || this.props.content[0] }</span>
                             <span className="arrow">&#9660;</span>
                         </div>
-                    </button>
-                    <div className="content" style={{ display: (this.state.showContent) ? "block" : "none" }}>
+                    </button><br />
+                    <div className="content" style={{ display: (this.state.showContent) ? "inline-block" : "none" }}>
                         {this.props.content.map(item => {
                             return (
                                 <div 
@@ -60,9 +62,11 @@ DropdownMenu.PropTypes = {
 }
 
 const StyledDropDownMenu = styled.div`
-    width: 80%;
+    width: ${props => props.width || '200px'};
+    background-color: blue;
+    text-align: left;
     .topHeader {
-        width: 100%;
+        width: 80%;
         display: inline-block;
         background-color: ${props => props.theme.blue.dark};
         color: ${props => props.theme.blue.light};
@@ -72,7 +76,7 @@ const StyledDropDownMenu = styled.div`
         letter-spacing: .06rem;
     }
     .toggleBtn {
-        width: 100%;
+        width: ${props => props.width || '200px'};
         border: none;
         font-family: ${props => props.theme.font.main};
         padding: 5px;
@@ -85,18 +89,22 @@ const StyledDropDownMenu = styled.div`
         }
     }
     .buttonDisplay {
+
         display: flex;
     }
     .text {
         flex-grow: 1;
     }
     .content {
+        width: ${props => props.width || '200px'};
+        
         position: absolute;
-        width: 80%;
+        z-index: 100;
         font-size: 10pt;
         font-family: ${props => props.theme.font.main};
     }
     .item {
+
         padding: 5px;
     }
     .selected {

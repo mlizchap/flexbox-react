@@ -8,6 +8,7 @@ export const theme = {
     },
     background: {
         dark: '#424247',
+        light: 'blue'
     },
     font: {
         main: 'Raleway',

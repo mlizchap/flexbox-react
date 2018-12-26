@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {parentPropertyData} from '../../data';
 import Item from '../../components/Item/Item';
 import ItemContainer from '../../components/ItemContainer/ItemContainer';
+import PropertySectionContainer from '../../components/PropertySectionContainer/PropertySectionContainer';
 
 const ItemDisplay = (props) => {
     console.log(props)
@@ -31,16 +32,25 @@ class ParentProperties extends Component {
     render() {
         return (
             <div>
-                {parentPropertyData.detail.map(prop => {
+                
+            <PropertySectionContainer
+                // content={["CC", "VV"]}
+                // handleSelectItem={() => {}}
+            />
+                {/* {parentPropertyData.detail.map(prop => {
                     return (
                         <div key={prop.camelCaseTitle}>
                             {prop.kabobCaseTitle}
                             <div>
-                                <ItemDisplay justifyContent={this.state.parentProps[prop.camelCaseTitle]}/>
+                                <ItemDisplay 
+                                    
+                                    justifyContent={this.state.parentProps[prop.camelCaseTitle]}
+                                    
+                                />
                             </div>
                         </div>
                     )
-                })}
+                })} */}
             </div>
         );
     }

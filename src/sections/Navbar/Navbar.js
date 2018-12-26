@@ -34,4 +34,8 @@ const StyledNavbar = styled.div`
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    width: 80%;
+    // background-color: yellow;
+    margin-right: auto;
+    margin-left: auto;
 `
