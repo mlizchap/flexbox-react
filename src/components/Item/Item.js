@@ -8,7 +8,7 @@ class Item extends Component {
     }
     render() {
         return (
-            <StyledItem>item</StyledItem>
+            <StyledItem>a</StyledItem>
         );
     }
 }
@@ -16,8 +16,10 @@ class Item extends Component {
 export default Item;
 
 const StyledItem = styled.div`
-    background-color: green;
-    margin: 10px;
-    padding: 10px;
+    background-color: ${props => props.theme.green.item};
+    margin: 5px;
+    padding: 0 15px;
     display: inline-block;
+    width: 5%;
+    height: 15%;
 `

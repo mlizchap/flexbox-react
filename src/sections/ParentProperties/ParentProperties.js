@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Context } from '../../Provider';
 
 import {parentPropertyData} from '../../data';
 import Item from '../../components/Item/Item';
@@ -21,37 +22,34 @@ class ParentProperties extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            parentProps: {
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                flexWrap: "nowrap",
-                alignContent: "flex-start"
-            }
+
          };
     }
     render() {
         return (
-            <div>
-                
-            <PropertySectionContainer
-                // content={["CC", "VV"]}
-                // handleSelectItem={() => {}}
-            />
-                {/* {parentPropertyData.detail.map(prop => {
+            <Context.Consumer>
+                {context => {
                     return (
-                        <div key={prop.camelCaseTitle}>
-                            {prop.kabobCaseTitle}
-                            <div>
-                                <ItemDisplay 
-                                    
-                                    justifyContent={this.state.parentProps[prop.camelCaseTitle]}
-                                    
-                                />
-                            </div>
+                        <div>
+                            <PropertySectionContainer
+                                title="justify-content"
+                                contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
+                                handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
+                            >
+                                <ItemContainer />
+                            </PropertySectionContainer>
+
+                            <PropertySectionContainer
+                                title=""
+                                contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
+                                handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
+                            >
+                                <ItemContainer />
+                            </PropertySectionContainer>
                         </div>
                     )
-                })} */}
-            </div>
+                }}
+            </Context.Consumer>
         );
     }
 }

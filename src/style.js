@@ -6,6 +6,12 @@ export const theme = {
         hover: '#b4c3e8',
         light: '#ced7ef'
     },
+    green: {
+        main: '#49b7a4',
+        subHeader: '#c9ffe8',
+        item: '#cbede0',
+        dropDownBtn: `#e0fffa`,
+    },
     background: {
         dark: '#424247',
         light: 'blue'

@@ -6,11 +6,20 @@ class Provider extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            flexDirection: "row"
+            flexDirection: "row",
+            parentProps: {
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                flexWrap: "nowrap",
+                alignContent: "flex-start"
+            }
          };
     }
     updateFlexDirection = (selected) => {
         this.setState({ flexDirection: selected })
+    }
+    changeJustifyContent = (selected) => {
+        this.setState({ parentProps: {...this.state.parentProps, justifyContent: selected } })
     }
     render() {
         return (
@@ -18,6 +27,7 @@ class Provider extends Component {
                 value={{
                     state: this.state,
                     updateFlexDirection: this.updateFlexDirection,
+                    changeJustifyContent: this.changeJustifyContent,
                 }}
             >
                 {this.props.children}    

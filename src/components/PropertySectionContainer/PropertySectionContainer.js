@@ -19,15 +19,15 @@ class PropertySectionContainer extends Component {
                 {context => {
                     return (
                         <StyledPropertySectionContainer>
-                            <div>title</div>
+                            <div>{this.props.title}</div>
                             <div className="dropdown">
                                 <DropdownMenu 
                                     // className="dropdown"
                                     // width="40%"
                                     header="test"
-                                    content={["a", "b"]}
+                                    content={this.props.contents}
                                     hasHeader={false}
-                                    handleSelectItem={(selected) => console.log(selected)}
+                                    // handleSelectItem={(selected) => this.props.change(selected)}
                                     {...this.props}
                                 />
                             </div>
@@ -62,11 +62,10 @@ const StyledPropertySectionContainer = styled.div`
     padding: 20px;
     text-align: center;
     width: 80%;
-
+    margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
     .dropdown {
-        background-color: purple;
         margin-right: auto;
         margin-left: auto;
         display: flex;
