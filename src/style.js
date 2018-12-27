@@ -7,10 +7,12 @@ export const theme = {
         light: '#ced7ef'
     },
     green: {
-        main: '#49b7a4',
-        subHeader: '#c9ffe8',
+        main: '#c5e5d5',
+        light: '#d4fcee',
+        dark: '#0c6d4b',
+        hover: '#e1f7ef',
         item: '#cbede0',
-        dropDownBtn: `#e0fffa`,
+        title: '#bcfff3'
     },
     background: {
         dark: '#424247',

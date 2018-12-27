@@ -18,16 +18,14 @@ class PropertySectionContainer extends Component {
             <Context.Consumer>
                 {context => {
                     return (
-                        <StyledPropertySectionContainer>
-                            <div>{this.props.title}</div>
+                        <StyledPropertySectionContainer {...this.props}>
+                            <div className="title">{this.props.title}</div>
                             <div className="dropdown">
                                 <DropdownMenu 
-                                    // className="dropdown"
-                                    // width="40%"
-                                    header="test"
+                                    hover
+                                    color="green"
                                     content={this.props.contents}
                                     hasHeader={false}
-                                    // handleSelectItem={(selected) => this.props.change(selected)}
                                     {...this.props}
                                 />
                             </div>
@@ -65,6 +63,12 @@ const StyledPropertySectionContainer = styled.div`
     margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
+    .title {
+        color: ${props => props.theme[props.color].title};
+        font-family: ${props => props.theme.font.main};
+        font-weight: bold;
+        letter-spacing: .3rem;
+    }
     .dropdown {
         margin-right: auto;
         margin-left: auto;
@@ -72,6 +76,7 @@ const StyledPropertySectionContainer = styled.div`
         justify-content: center;
         padding: 10px 0;
     }
+
 `
 
 const StyledHorizantalAxis = styled.div`

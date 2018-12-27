@@ -4,11 +4,14 @@ import styled from 'styled-components';
 class Item extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { 
+             
+         };
     }
+
     render() {
         return (
-            <StyledItem>a</StyledItem>
+            <StyledItem {...this.props}>{this.props.letter}</StyledItem>
         );
     }
 }
@@ -20,6 +23,8 @@ const StyledItem = styled.div`
     margin: 5px;
     padding: 0 15px;
     display: inline-block;
-    width: 5%;
-    height: 15%;
+    width: ${props => props.width};;
+    height: ${props => props.height};
+    line-height: ${props => props.height};
+    border-radius: 2px;
 `

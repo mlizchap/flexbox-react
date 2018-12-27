@@ -15,6 +15,8 @@ class Navbar extends Component {
                     return (
                         <StyledNavbar>
                             <DropdownMenu 
+                                hover
+                                color="blue"
                                 header="FLEX-DIRECTION:"
                                 handleSelectItem={(selected) => context.updateFlexDirection(selected)}
                                 content={["row", "column", "row-reverse", 'column-revers']}

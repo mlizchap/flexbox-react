@@ -32,6 +32,7 @@ class ParentProperties extends Component {
                     return (
                         <div>
                             <PropertySectionContainer
+                                color="green"
                                 title="justify-content"
                                 contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
                                 handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
@@ -40,6 +41,7 @@ class ParentProperties extends Component {
                             </PropertySectionContainer>
 
                             <PropertySectionContainer
+                                color="green"
                                 title=""
                                 contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
                                 handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
