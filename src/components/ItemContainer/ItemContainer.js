@@ -13,8 +13,8 @@ class ItemContainer extends Component {
     }
     componentDidMount = () => {
         this.setState({ 
-            heights: Array.from({length: 10}, (_, i) => this.getRandomValue(20, 40)),
-            widths: Array.from({length: 10}, (_, i) => this.getRandomValue(40, 100)),
+            heights: Array.from({length: 10}, (_, i) => this.getRandomValue(20, 30)),
+            widths: Array.from({length: 10}, (_, i) => this.getRandomValue(15, 45)),
         })
     }
     getRandomValue = (min,max) => {
@@ -25,15 +25,17 @@ class ItemContainer extends Component {
         return (
             <Context.Consumer>
                 {context => {
-                    console.log(context.state.parentProps.justifyContent)
                     return (
                         <StyledItemContainer 
                             flexDirection={context.state.flexDirection}
-                            justifyContent={context.state.parentProps.justifyContent}
+                            justifyContent={(this.props.justifyContent) ? context.state.parentProps.justifyContent : 'flex-start'}
+                            alignItems={(this.props.alignItems) ? context.state.parentProps.alignItems : 'flex-start'}
+                            alignContent={(this.props.alignContent) ? context.state.parentProps.alignContent : 'flex-start'}
+                            flexWrap={(this.props.flexWrap) ? context.state.parentProps.flexWrap : (this.props.alignContent) ? 'wrap' : 'nowrap' }
                         >
-                            <Item height={`${this.state.heights[0]}px`} width={`${this.state.widths[0]}px`} letter="a" />
-                            <Item height={`${this.state.heights[1]}px`} width={`${this.state.widths[1]}px`} letter="b" />
-                            <Item height={`${this.state.heights[2]}px`} width={`${this.state.widths[2]}px`} letter="c" />
+                            {Array.from({length: this.props.itemAmount || 3}, (_, i) => 
+                                <Item height={`${this.state.heights[i]}px`} width={`${this.state.widths[i]}px`} display={i + 1} />)
+                            }
                         </StyledItemContainer>
                     )
                 }}
@@ -53,4 +55,9 @@ const StyledItemContainer = styled.div`
     width: 100%;
     flex-direction: ${props => props.flexDirection};
     justify-content: ${props => props.justifyContent};
+    align-items: ${props => props.alignItems};
+    align-content: ${props => props.alignContent};
+    flex-wrap: ${props => props.flexWrap};
+    overflow: scroll;
+
 `

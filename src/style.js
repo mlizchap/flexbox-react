@@ -12,7 +12,9 @@ export const theme = {
         dark: '#0c6d4b',
         hover: '#e1f7ef',
         item: '#cbede0',
-        title: '#bcfff3'
+        title: '#bcfff3',
+        background: '#fafff7',
+        mainTitle: '#89af9b',
     },
     background: {
         dark: '#424247',

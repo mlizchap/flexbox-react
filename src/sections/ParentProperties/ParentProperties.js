@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Context } from '../../Provider';
 
-import {parentPropertyData} from '../../data';
+import styled from 'styled-components';
 import Item from '../../components/Item/Item';
 import ItemContainer from '../../components/ItemContainer/ItemContainer';
 import PropertySectionContainer from '../../components/PropertySectionContainer/PropertySectionContainer';
@@ -18,6 +18,7 @@ const ItemDisplay = (props) => {
 }
 
 
+
 class ParentProperties extends Component {
     constructor(props) {
         super(props);
@@ -30,25 +31,38 @@ class ParentProperties extends Component {
             <Context.Consumer>
                 {context => {
                     return (
-                        <div>
+                        <StyledParentProperties>
+                            <span className="parentTitle">PARENT PROPERTIES</span>
                             <PropertySectionContainer
-                                color="green"
+                                
                                 title="justify-content"
+                                color="green"
                                 contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
                                 handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
                             >
-                                <ItemContainer />
+                                <ItemContainer justifyContent />
                             </PropertySectionContainer>
 
                             <PropertySectionContainer
+                                title="align-items"
                                 color="green"
-                                title=""
-                                contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
-                                handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
+                                contents={["flex-start", "flex-end", "center", "stretch", "baseline"]}
+                                handleSelectItem={ (selected) => context.changeAlignItems(selected) }
                             >
-                                <ItemContainer />
+                                <ItemContainer alignItems />
                             </PropertySectionContainer>
-                        </div>
+
+                            <PropertySectionContainer
+                                title="align-content"
+                                color="green"
+                                contents={["flex-start", "flex-end", "center", "stretch", "space-between", "space-around"]}
+                                handleSelectItem={ (selected) => context.changeAlignContent(selected) }
+                            >
+                                <ItemContainer alignContent itemAmount={8}/>
+                            </PropertySectionContainer>
+
+                            
+                        </StyledParentProperties>
                     )
                 }}
             </Context.Consumer>
@@ -57,4 +71,27 @@ class ParentProperties extends Component {
 }
 
 export default ParentProperties;
+
+const StyledParentProperties = styled.div`
+    max-width: 500px;
+    text-align: left;
+    width: 90%;
+    padding: 0 5%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: ${props => props.theme.green.background};
+    .parentTitle {
+        // width: 80%;
+        font-size: 20pt;
+        color: ${props => props.theme.green.mainTitle};
+        font-family: ${props => props.theme.font.title};
+        font-weight: 800;
+        display: flex;
+        padding: 10px 0px;
+        // background-color: orange;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+`
 

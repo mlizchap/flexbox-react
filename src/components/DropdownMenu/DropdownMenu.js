@@ -19,7 +19,11 @@ class DropdownMenu extends Component {
         this.setState({ showContent: false })
     }
     itemSelect = (selected) => {
-        this.setState({ selected })
+        this.setState({ 
+            selected, 
+            currentSelected: selected,
+            showContent: false
+        })
         this.props.handleSelectItem(selected);
     }
     hoverItem = (hovered) => {

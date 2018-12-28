@@ -11,7 +11,7 @@ class Item extends Component {
 
     render() {
         return (
-            <StyledItem {...this.props}>{this.props.letter}</StyledItem>
+            <StyledItem {...this.props}>{this.props.display}</StyledItem>
         );
     }
 }

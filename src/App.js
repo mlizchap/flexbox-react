@@ -9,7 +9,7 @@ import PropertySectionContainer from './components/PropertySectionContainer/Prop
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{width: '100%'}}>
         <Header />
         <Navbar />
         

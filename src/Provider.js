@@ -7,6 +7,7 @@ class Provider extends Component {
         super(props);
         this.state = { 
             flexDirection: "row",
+            currentParentProp: "",
             parentProps: {
                 justifyContent: "flex-start",
                 alignItems: "flex-start",
@@ -19,7 +20,19 @@ class Provider extends Component {
         this.setState({ flexDirection: selected })
     }
     changeJustifyContent = (selected) => {
-        this.setState({ parentProps: {...this.state.parentProps, justifyContent: selected } })
+        this.setState({ 
+            parentProps: {...this.state.parentProps, justifyContent: selected },
+            
+        })
+    }
+    changeAlignItems = (selected) => {
+        console.log('slected', selected)
+        this.setState({ parentProps: {...this.state.parentProps, alignItems: selected } })
+    }
+    changeAlignContent = (selected) => {
+        this.setState({ 
+            parentProps: {...this.state.parentProps, alignContent: selected, flexWrap: 'wrap' }
+        })
     }
     render() {
         return (
@@ -28,6 +41,8 @@ class Provider extends Component {
                     state: this.state,
                     updateFlexDirection: this.updateFlexDirection,
                     changeJustifyContent: this.changeJustifyContent,
+                    changeAlignItems: this.changeAlignItems,
+                    changeAlignContent: this.changeAlignContent
                 }}
             >
                 {this.props.children}    

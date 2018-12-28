@@ -59,7 +59,7 @@ const StyledPropertySectionContainer = styled.div`
     background-color: ${props => props.theme.background.dark};
     padding: 20px;
     text-align: center;
-    width: 80%;
+    // width: 80%;
     margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;

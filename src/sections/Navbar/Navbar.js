@@ -3,6 +3,8 @@ import DropdownMenu from '../../components/DropdownMenu/DropdownMenu';
 import styled from 'styled-components';
 import { Context } from '../../Provider';
 
+
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
