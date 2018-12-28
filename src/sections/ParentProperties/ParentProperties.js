@@ -31,8 +31,8 @@ class ParentProperties extends Component {
             <Context.Consumer>
                 {context => {
                     return (
-                        <StyledParentProperties>
-                            <span className="parentTitle">PARENT PROPERTIES</span>
+                        <StyledProperties>
+                            <span className="mainTitle">PARENT PROPERTIES</span>
                             <PropertySectionContainer
                                 
                                 title="justify-content"
@@ -61,8 +61,19 @@ class ParentProperties extends Component {
                                 <ItemContainer alignContent itemAmount={8}/>
                             </PropertySectionContainer>
 
+
+                            <PropertySectionContainer
+                                title="flex-wrap"
+                                color="green"
+                                contents={["no-wrap", "wrap", "wrap-reverse"]}
+                                handleSelectItem={ (selected) => context.changeFlexWrap(selected) }
+                            >
+                                <ItemContainer flexWrap itemAmount={8}/>
+                            </PropertySectionContainer>
+
+
                             
-                        </StyledParentProperties>
+                        </StyledProperties>
                     )
                 }}
             </Context.Consumer>
@@ -72,7 +83,7 @@ class ParentProperties extends Component {
 
 export default ParentProperties;
 
-const StyledParentProperties = styled.div`
+const StyledProperties = styled.div`
     max-width: 500px;
     text-align: left;
     width: 90%;
@@ -80,7 +91,7 @@ const StyledParentProperties = styled.div`
     margin-right: auto;
     margin-left: auto;
     background-color: ${props => props.theme.green.background};
-    .parentTitle {
+    .mainTitle {
         // width: 80%;
         font-size: 20pt;
         color: ${props => props.theme.green.mainTitle};

@@ -15,7 +15,7 @@ class App extends Component {
         
 
 
-        <ParentProperties />
+        {/* <ParentProperties /> */}
       </div>
     );
   }

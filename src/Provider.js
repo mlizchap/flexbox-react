@@ -34,6 +34,11 @@ class Provider extends Component {
             parentProps: {...this.state.parentProps, alignContent: selected, flexWrap: 'wrap' }
         })
     }
+    changeFlexWrap = (selected) => {
+        this.setState({ 
+            parentProps: {...this.state.parentProps, flexWrap: selected }
+        })
+    }
     render() {
         return (
             <Context.Provider
@@ -42,7 +47,8 @@ class Provider extends Component {
                     updateFlexDirection: this.updateFlexDirection,
                     changeJustifyContent: this.changeJustifyContent,
                     changeAlignItems: this.changeAlignItems,
-                    changeAlignContent: this.changeAlignContent
+                    changeAlignContent: this.changeAlignContent,
+                    changeFlexWrap: this.changeFlexWrap
                 }}
             >
                 {this.props.children}    
