@@ -34,7 +34,6 @@ class ParentProperties extends Component {
                         <StyledProperties>
                             <span className="mainTitle">PARENT PROPERTIES</span>
                             <PropertySectionContainer
-                                
                                 title="justify-content"
                                 color="green"
                                 contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}

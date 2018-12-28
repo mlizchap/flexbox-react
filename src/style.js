@@ -1,10 +1,23 @@
 export const theme = {
     blue: {
+        // old
         main: '#9eb5ed',
         dark: '#15436d',
         highlight: '#398fdd',
         hover: '#b4c3e8',
-        light: '#ced7ef'
+        light: '#ced7ef',
+        // **************
+
+        a: {
+            light: "#cee0ed",
+            
+        },
+        b: {
+            light: '#c7ddfc'
+        },
+        c: {
+            light: '#c4dded'
+        }
     },
     green: {
         main: '#c5e5d5',
