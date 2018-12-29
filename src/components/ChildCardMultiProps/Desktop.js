@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import { Context } from '../../Provider';
 
 const letters = ["a", "b", "c"];
 
@@ -14,52 +15,58 @@ class ChildCardMultiProps extends Component {
     }
     render() {
         return (
-            <StyledChildCardContainer>
-                {letters.map(letter => {
-                    return (
-                        <StyledChildCard letter={letter}>
-                            <div>{letter}</div>
-                            <div className="properties">
-                                <div className="prop">
-                                    <span>grow:</span>
-                                    <DropdownMenu 
-                                        hover
-                                        width="50px"
-                                        // color="dark"
-                                        content={[0, 1, 2, 3, 4, 5]}
-                                        //handleSelectItem={(val) => console.log(val, letter)}
-                                        handleSelectItem={(value) => this.props.changeFlexGrow(value, letter)}
-                                        {...this.props}
-                                    />
+            <Context.Consumer>
+            {context => {
+                return (
+                    <StyledChildCardContainer>
+                    {letters.map(letter => {
+                        return (
+                            <StyledChildCard letter={letter}>
+                                <div className="propTitle">{letter}</div>
+                                <div className="properties">
+                                    <div className="prop">
+                                        <span>grow:</span>
+                                        <DropdownMenu 
+                                            hover
+                                            width="50px"
+                                            content={[0, 1, 2, 3, 4, 5]}
+                                            default={context.state.childProps.flexGrow[letter]}
+                                            handleSelectItem={(value) => this.props.changeFlexGrow(value, letter)}
+                                            {...this.props}
+                                        />
+                                        </div>
+                                    <div className="prop">
+                                        <span>shrink:</span>
+                                        <DropdownMenu 
+                                            hover
+                                            width="50px"
+                                            // color="dark"
+                                            content={[0 ,1, 2, 3, 4, 5]}
+                                            default={context.state.childProps.flexShrink[letter]}
+                                            handleSelectItem={(value) => this.props.changeFlexShrink(value, letter)}
+                                            {...this.props}
+                                        />
                                     </div>
-                                <div className="prop">
-                                    <span>shrink:</span>
-                                    <DropdownMenu 
-                                        hover
-                                        width="50px"
-                                        // color="dark"
-                                        content={[0 ,1, 2, 3, 4, 5]}
-                                        handleSelectItem={(value) => this.props.changeFlexShrink(value, letter)}
-                                        {...this.props}
-                                    />
+                                    <div className="prop">
+                                        <span>basis:</span>
+                                        <DropdownMenu 
+                                            hover
+                                            width="50px"
+                                            // color="green"
+                                            default={context.state.childProps.flexBasis[letter]}
+                                            content={["20%", "33%", "40%", "60%", "auto"]}
+                                            handleSelectItem={(value) => this.props.changeFlexBasis(value, letter)}
+                                            {...this.props}
+                                        />
+                                    </div>
                                 </div>
-                                <div className="prop">
-                                    <span>basis:</span>
-                                    <DropdownMenu 
-                                        hover
-                                        width="50px"
-                                        // color="green"
-                                        content={["20%", "33%", "40%", "60%", "auto"]}
-                                        handleSelectItem={(value) => this.props.changeFlexBasis(value, letter)}
-                                        {...this.props}
-                                    />
-                                </div>
-                            </div>
-                        </StyledChildCard>
-
-                    )
-                })}
-            </StyledChildCardContainer>
+                            </StyledChildCard>
+                        )
+                    })}
+                </StyledChildCardContainer>
+            )
+        }}
+    </Context.Consumer>
 
             
 
@@ -100,9 +107,15 @@ const StyledChildCard = styled.div`
         
     }
     .propTitle {
+        background-color: white;
+        font-family: ${props => props.theme.font.title}
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
         line-height: 25px;
-        padding-right: 5px;
         font-size: 10pt;
+        margin-right: auto;
+        margin-left: auto;
     }
 `
 

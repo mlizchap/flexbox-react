@@ -25,7 +25,10 @@ class ChildProperties extends Component {
                                 content={[1, 2, 3, 10, 'auto']}
                                 color="dark"
                                 title="order"
-                                handleSelectItem={(number) => context.changeOrder(number, this.state.currentLetter)} 
+                                // default={context.state.childProps.}
+                                changePropertyMobile={(val, letter) => context.changeOrder(val, letter)} 
+                                changeOrder = {(val, letter) => context.changeOrder(val, letter)}
+                                changeAlignSelf={() => {}}
                                 handleCurrentLetter={(letter) => this.setState({ currentLetter: letter})}
                             >
                                 <ChildItemContainer 
@@ -41,7 +44,10 @@ class ChildProperties extends Component {
                                 content={["flex-start", "flex-end", "center", "baseline", 'stretch']}
                                 color="dark"
                                 title="align-self"
-                                handleSelectItem={(value) => context.changeAlignSelf(value, this.state.currentLetter)} 
+                                changePropertyMobile={(val, letter) => context.changeAlignSelf(val, letter)} 
+                                changeOrder={() => {}}
+                                changeAlignSelf={(val, letter) => context.changeAlignSelf(val, letter)}
+                                // handleSelectItem={(value) => context.changeAlignSelf(value, this.state.currentLetter)} 
                                 handleCurrentLetter={(letter) => this.setState({ currentLetter: letter})}
                             >
                                 <ChildItemContainer 

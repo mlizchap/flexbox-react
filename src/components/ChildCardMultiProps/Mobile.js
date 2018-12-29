@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import { Context } from '../../Provider';
 
 class ChildCardMultiProps extends Component {
     constructor(props) {
@@ -12,50 +13,60 @@ class ChildCardMultiProps extends Component {
     }
     render() {
         return (
-            <StyledChildCard letter={this.state.currentLetter}>
-                <DropdownMenu 
-                    width="50px"
-                    content={["a", "b", "c"]}
-                    color="blue"
-                    handleSelectItem={(selected) => this.setState({ currentLetter: selected }, (selected) => this.props.handleCurrentLetter(this.state.currentLetter))}
-                />
-                <div className="properties">
-                    <div className="prop">
-                        <span>grow:</span>
-                        <DropdownMenu 
-                            hover
-                            width="60px"
-                            color="blue"
-                            content={[0, 1, 2, 3, 4, 5]}
-                            handleSelectItem={(value) => this.props.changeFlexGrow(value, this.state.currentLetter)}
-                            {...this.props}
-                        />
-                    </div>
-                    <div className="prop">
-                        <span>shrink:</span>
-                        <DropdownMenu 
-                            hover
-                            width="60px"
-                            color="blue"
-                            content={[0 ,1, 2, 3, 4, 5]}
-                            handleSelectItem={(value) => this.props.changeFlexShrink(value, this.state.currentLetter)}
-                            {...this.props}
-                        />
-                    </div>
-                    <div className="prop">
-                        <span>basis:</span>
-                        <DropdownMenu 
-                            hover
-                            width="60px"
-                            color="blue"
-                            content={["20%", "33%", "40%", "60%", "auto"]}
-                            handleSelectItem={(value) => this.props.changeFlexBasis(value, this.state.currentLetter)}
-                            {...this.props}
-                        />
-                    </div>
-
-                </div>
-            </StyledChildCard>
+            <Context.Consumer>
+                {context => {
+                    return (
+                        <StyledChildCard letter={this.state.currentLetter}>
+                            <DropdownMenu 
+                                width="50px"
+                                content={["a", "b", "c"]}
+                                color="blue"
+                                handleSelectItem={(selected) => this.setState({ currentLetter: selected }, (selected) => this.props.handleCurrentLetter(this.state.currentLetter))}
+                            />
+                            <div className="properties">
+                                <div className="prop">
+                                    <span>grow:</span>
+                                    <DropdownMenu 
+                                        hover
+                                        width="60px"
+                                        color="blue"
+                                        default={context.state.childProps.flexGrow[this.state.currentLetter]}
+                                        content={[0, 1, 2, 3, 4, 5]}
+                                        handleSelectItem={(value) => this.props.changeFlexGrow(value, this.state.currentLetter)}
+                                        {...this.props}
+                                    />
+                                </div>
+                                <div className="prop">
+                                    <span>shrink:</span>
+                                    <DropdownMenu 
+                                        hover
+                                        width="60px"
+                                        color="blue"
+                                        content={[0 ,1, 2, 3, 4, 5]}
+                                        default={context.state.childProps.flexShrink[this.state.currentLetter]}
+                                        handleSelectItem={(value) => this.props.changeFlexShrink(value, this.state.currentLetter)}
+                                        {...this.props}
+                                    />
+                                </div>
+                                <div className="prop">
+                                    <span>basis:</span>
+                                    <DropdownMenu 
+                                        hover
+                                        width="60px"
+                                        color="blue"
+                                        content={["20%", "33%", "40%", "60%", "auto"]}
+                                        default={context.state.childProps.flexBasis[this.state.currentLetter]}
+                                        handleSelectItem={(value) => this.props.changeFlexBasis(value, this.state.currentLetter)}
+                                        {...this.props}
+                                    />
+                                </div>
+            
+                            </div>
+                        </StyledChildCard>
+        
+                    )
+                }}
+            </Context.Consumer>
         );
     }
 }

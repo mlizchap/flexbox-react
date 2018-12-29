@@ -5,7 +5,7 @@ import { Context } from '../../Provider';
 // import VerticalBoxAxis from '../VerticalBoxAxis/VerticalBoxAxis';
 // import HorizantalBoxAxis from '../HorizantalBoxAxis/HorizantalBoxAxis';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
-import ChildCardSingleProp from '../ChildCardSingleProp/ChildCardSingleProp';
+import ChildCardSingleProp from '../ChildCardSingleProp';
 import ChildCardMultiProp from '../ChildCardMultiProps'
 
 class ChildPropSectionContainer extends Component {
@@ -23,7 +23,7 @@ class ChildPropSectionContainer extends Component {
                         <StyledPropertySectionContainer color="blue" {...this.props}>
                             <div className="title">{this.props.title}</div>
                             {(this.props.singleCard) ? 
-                                <ChildCardSingleProp {...this.props}      />
+                                <ChildCardSingleProp {...this.props}  />
                                 : <ChildCardMultiProp {...this.props} />
                                 
                             }   
