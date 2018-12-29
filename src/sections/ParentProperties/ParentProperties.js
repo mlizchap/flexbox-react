@@ -3,21 +3,8 @@ import { Context } from '../../Provider';
 
 import styled from 'styled-components';
 import Item from '../../components/Item/Item';
-import ItemContainer from '../../components/ItemContainer/ItemContainer';
-import PropertySectionContainer from '../../components/PropertySectionContainer/PropertySectionContainer';
-
-const ItemDisplay = (props) => {
-    console.log(props)
-    return (
-        <ItemContainer {...props}>
-            <Item />
-            <Item />
-            <Item />
-        </ItemContainer>
-    )
-}
-
-
+import ParentItemContainer from '../../components/ParentItemContainer/ParentItemContainer';
+import ParentPropSectionsContainer from '../../components/ParentPropSectionsContainer/ParentPropSectionsContainer';
 
 class ParentProperties extends Component {
     constructor(props) {
@@ -33,42 +20,42 @@ class ParentProperties extends Component {
                     return (
                         <StyledProperties>
                             <span className="mainTitle">PARENT PROPERTIES</span>
-                            <PropertySectionContainer
+                            <ParentPropSectionsContainer
                                 title="justify-content"
                                 color="green"
                                 contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
                                 handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
                             >
-                                <ItemContainer justifyContent />
-                            </PropertySectionContainer>
+                                <ParentItemContainer justifyContent />
+                            </ParentPropSectionsContainer>
 
-                            <PropertySectionContainer
+                            <ParentPropSectionsContainer
                                 title="align-items"
                                 color="green"
                                 contents={["flex-start", "flex-end", "center", "stretch", "baseline"]}
                                 handleSelectItem={ (selected) => context.changeAlignItems(selected) }
                             >
-                                <ItemContainer alignItems />
-                            </PropertySectionContainer>
+                                <ParentItemContainer alignItems />
+                            </ParentPropSectionsContainer>
 
-                            <PropertySectionContainer
+                            <ParentPropSectionsContainer
                                 title="align-content"
                                 color="green"
                                 contents={["flex-start", "flex-end", "center", "stretch", "space-between", "space-around"]}
                                 handleSelectItem={ (selected) => context.changeAlignContent(selected) }
                             >
-                                <ItemContainer alignContent itemAmount={8}/>
-                            </PropertySectionContainer>
+                                <ParentItemContainer alignContent itemAmount={8}/>
+                            </ParentPropSectionsContainer>
 
 
-                            <PropertySectionContainer
+                            <ParentPropSectionsContainer
                                 title="flex-wrap"
                                 color="green"
                                 contents={["no-wrap", "wrap", "wrap-reverse"]}
                                 handleSelectItem={ (selected) => context.changeFlexWrap(selected) }
                             >
-                                <ItemContainer flexWrap itemAmount={8}/>
-                            </PropertySectionContainer>
+                                <ParentItemContainer flexWrap itemAmount={8}/>
+                            </ParentPropSectionsContainer>
 
 
                             

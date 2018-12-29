@@ -14,14 +14,13 @@ class ItemContainer extends Component {
     componentDidMount = () => {
         this.setState({ 
             heights: Array.from({length: 10}, (_, i) => this.getRandomValue(20, 30)),
-            widths: Array.from({length: 10}, (_, i) => this.getRandomValue(15, 45)),
+            widths: Array.from({length: 10}, (_, i) => this.getRandomValue(15, 30)),
         })
     }
     getRandomValue = (min,max) => {
         return Math.floor(Math.random()*(max-min+1)+min);
     }
     render() {
-        console.log(this.state.heights[0])
         return (
             <Context.Consumer>
                 {context => {
@@ -34,7 +33,8 @@ class ItemContainer extends Component {
                             flexWrap={(this.props.flexWrap) ? context.state.parentProps.flexWrap : (this.props.alignContent) ? 'wrap' : 'nowrap' }
                         >
                             {Array.from({length: this.props.itemAmount || 3}, (_, i) => 
-                                <Item height={`${this.state.heights[i]}px`} width={`${this.state.widths[i]}px`} display={i + 1} />)
+                                <Item 
+                                    color="#d4fcee" height={`${this.state.heights[i]}px`} width={`${this.state.widths[i]}px`} display={i + 1} />)
                             }
                         </StyledItemContainer>
                     )
