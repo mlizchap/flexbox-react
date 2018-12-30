@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import ChildCardSingleProp from '../../components/ChildCardSingleProp/ChildCardSingleProp';
 import ChildPropSectionContainer from '../../components/ChildPropSectionsConainer/ChildPropSectionsContainer';
 import ChildItemContainer from '../../components/ChildItemContainer/ChildItemContainer';
 import { Context } from '../../Provider';
@@ -25,7 +24,7 @@ class ChildProperties extends Component {
                                 content={[1, 2, 3, 10, 'auto']}
                                 color="dark"
                                 title="order"
-                                // default={context.state.childProps.}
+                                propValue={context.state.childProps.order}
                                 changePropertyMobile={(val, letter) => context.changeOrder(val, letter)} 
                                 changeOrder = {(val, letter) => context.changeOrder(val, letter)}
                                 changeAlignSelf={() => {}}
@@ -44,6 +43,7 @@ class ChildProperties extends Component {
                                 content={["flex-start", "flex-end", "center", "baseline", 'stretch']}
                                 color="dark"
                                 title="align-self"
+                                propValue={context.state.childProps.alignSelf}
                                 changePropertyMobile={(val, letter) => context.changeAlignSelf(val, letter)} 
                                 changeOrder={() => {}}
                                 changeAlignSelf={(val, letter) => context.changeAlignSelf(val, letter)}

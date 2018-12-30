@@ -21,6 +21,7 @@ class SinglePropDesktop extends Component {
         return (
             <StyledChildCardContainer>
                 {(letters.map(letter => {
+                    console.log("VALL", this.props.propValue[letter])
                     return (
                         <StyledChildCard letter={this.state.currentLetter}>
                         <div className="propTitle">{letter}</div>
@@ -29,6 +30,8 @@ class SinglePropDesktop extends Component {
                                 hover
                                 width="100px"
                                 color="blue"
+                                // defaultValue="$$"
+                                defaultDisplay={this.props.propValue[letter]}
                                 handleSelectItem={(selected) => this.handleSelect(selected, letter)}
                                 {...this.props}
                             />

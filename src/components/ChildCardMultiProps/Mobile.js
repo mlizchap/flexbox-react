@@ -30,7 +30,7 @@ class ChildCardMultiProps extends Component {
                                         hover
                                         width="60px"
                                         color="blue"
-                                        default={context.state.childProps.flexGrow[this.state.currentLetter]}
+                                        defaultDisplay={context.state.childProps.flexGrow[this.state.currentLetter]}
                                         content={[0, 1, 2, 3, 4, 5]}
                                         handleSelectItem={(value) => this.props.changeFlexGrow(value, this.state.currentLetter)}
                                         {...this.props}
@@ -43,7 +43,7 @@ class ChildCardMultiProps extends Component {
                                         width="60px"
                                         color="blue"
                                         content={[0 ,1, 2, 3, 4, 5]}
-                                        default={context.state.childProps.flexShrink[this.state.currentLetter]}
+                                        defaultDisplay={context.state.childProps.flexShrink[this.state.currentLetter]}
                                         handleSelectItem={(value) => this.props.changeFlexShrink(value, this.state.currentLetter)}
                                         {...this.props}
                                     />
@@ -55,7 +55,7 @@ class ChildCardMultiProps extends Component {
                                         width="60px"
                                         color="blue"
                                         content={["20%", "33%", "40%", "60%", "auto"]}
-                                        default={context.state.childProps.flexBasis[this.state.currentLetter]}
+                                        defaultDisplay={context.state.childProps.flexBasis[this.state.currentLetter]}
                                         handleSelectItem={(value) => this.props.changeFlexBasis(value, this.state.currentLetter)}
                                         {...this.props}
                                     />

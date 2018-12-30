@@ -43,7 +43,7 @@ class DropdownMenu extends Component {
                     <span className="topHeader">{this.props.header.toUpperCase()}</span> : null }
                     <button className="toggleBtn" onClick={this.toggleContent} >
                         <div className="buttonDisplay">
-                            <span className="text">{ this.state.selected || this.props.default || this.props.content[0] }</span>
+                            <span className="text">{ this.state.selected || this.props.defaultDisplay || this.props.content[0] }</span>
                             <span className="arrow">&#9660;</span>
                         </div>
                     </button><br />

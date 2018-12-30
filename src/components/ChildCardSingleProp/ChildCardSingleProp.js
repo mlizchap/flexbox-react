@@ -25,6 +25,7 @@ class ChildCardDisplay extends Component {
                         hover
                         width="100px"
                         color="blue"
+                        
                         {...this.props}
                     />
                 </div>

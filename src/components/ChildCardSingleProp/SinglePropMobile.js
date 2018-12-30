@@ -25,6 +25,7 @@ class SinglePropMobile extends Component {
                         hover
                         width="100px"
                         color="blue"
+                        defaultDisplay={this.props.propValue[this.state.currentLetter]}
                         handleSelectItem={(selected) => this.props.changePropertyMobile(selected, this.state.currentLetter)}
                         {...this.props}
                     />
