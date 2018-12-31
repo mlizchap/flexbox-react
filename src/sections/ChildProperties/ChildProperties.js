@@ -102,6 +102,7 @@ const StyledProperties = styled.div`
     padding: 0 5%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 15px;
     background-color: ${props => props.theme.green.background};
     .mainTitle {
         // width: 80%;

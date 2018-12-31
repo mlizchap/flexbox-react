@@ -23,6 +23,7 @@ class Navbar extends Component {
                                 handleSelectItem={(selected) => context.updateFlexDirection(selected)}
                                 content={["row", "column", "row-reverse", 'column-revers']}
                             />
+
                         </StyledNavbar>
                     )
                 }}
@@ -38,8 +39,11 @@ const StyledNavbar = styled.div`
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    width: 80%;
-    // background-color: yellow;
     margin-right: auto;
     margin-left: auto;
+
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: orange;
 `

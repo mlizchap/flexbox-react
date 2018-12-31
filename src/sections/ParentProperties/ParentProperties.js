@@ -69,7 +69,7 @@ class ParentProperties extends Component {
 
 export default ParentProperties;
 
-const StyledProperties = styled.div`
+const StyledProperties = styled.div`    
     max-width: 500px;
     text-align: left;
     width: 90%;

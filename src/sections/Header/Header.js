@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Navbar from '../Navbar/Navbar';
+import Nav from '../Nav/Nav';
+
+
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +13,10 @@ class Header extends Component {
     render() {
         return (
             <StyledHeader>
-                FLEX BOX APP
+                <span className="headerTitle">FLEX BOX APP</span>
+                {/* <div className="sticky content">
+                    <Navbar />
+                </div> */}
             </StyledHeader>
         );
     }
@@ -19,11 +26,12 @@ export default Header;
 
 const StyledHeader = styled.div`
     width: 100%;
-
-    background-color: ${props => props.theme.background.dark};
+    color: ${props => props.theme.background.dark};
     font-family: ${props => props.theme.font.title};
-    font-size: 26pt;
     letter-spacing: .1rem;
-    padding: 10px 0px;
-    color: white;
+    padding-top: 15px;
+    // color: white;
+    .headerTitle {
+        font-size: 22pt;
+    }
 `

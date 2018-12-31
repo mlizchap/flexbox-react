@@ -7,14 +7,15 @@ import Navbar from './sections/Navbar/Navbar';
 import PropertySectionContainer from './components/PropertySectionContainer/PropertySectionContainer';
 import ChildCardSingleProp from './components/ChildCardSingleProp/ChildCardSingleProp';
 import ChildProperties from './sections/ChildProperties/ChildProperties';
+import Nav from './sections/Nav/Nav';
 
 class App extends Component {
   render() {
     return (
       <div className="App" style={{width: '100%'}}>
         <Header />
-        <Navbar />
-        
+        {/* <Navbar /> */}
+        <Nav />    
         <ChildProperties />
 
         <ParentProperties />

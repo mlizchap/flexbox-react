@@ -39,7 +39,7 @@ class DropdownMenu extends Component {
         return (
             <StyledDropDownMenu {...this.props} >
                 <div onMouseLeave={this.hideContent}>
-                    {(this.props.hasHeader) ? 
+                    {(this.props.header) ? 
                     <span className="topHeader">{this.props.header.toUpperCase()}</span> : null }
                     <button className="toggleBtn" onClick={this.toggleContent} >
                         <div className="buttonDisplay">
@@ -73,30 +73,32 @@ DropdownMenu.PropTypes = {
     header: PropTypes.string,
     content: PropTypes.array,
     handleSelectItem: PropTypes.func,
-    hasHeader: PropTypes.bool
 }
 
 const StyledDropDownMenu = styled.div`
     width: ${props => props.width || '200px'};
-    background-color: blue;
+    // background-color: blue;
     text-align: left;
     .topHeader {
-        width: 80%;
+        text-align: center;
+        width: 100%;
         display: inline-block;
-        background-color: ${props => props.theme.blue.dark};
-        color: ${props => props.theme[props.color].main};
+        margin: 0;
+        background-color: white;
+        color: ${props => props.theme[props.color].dark};
+        font-size: 9pt;
         padding: 2px 0px;
-        font-size: 10pt;
         font-family: ${props => props.theme.font.title};
-        letter-spacing: .06rem;
+        letter-spacing: .1rem;
     }
     .toggleBtn {
         width: ${props => props.width || '200px'};
         border: none;
-        font-family: ${props => props.theme.font.main};
-        padding: 5px;
+        font-family: ${props => props.theme.font.title};
+        padding: 3px;
         background-color: ${props => props.theme[props.color].main};
         color: ${props => props.theme[props.color].dark};
+        
         font-size: 10pt;
         &:hover {
             cursor: pointer;
