@@ -22,42 +22,50 @@ class ParentProperties extends Component {
                             <span id="PARENT%20PROPERTIES" className="mainTitle">
                                 <span className="titleText">PARENT PROPERTIES</span>
                             </span>
-                            <ParentPropSectionsContainer
-                                title="justify-content"
-                                color="green"
-                                contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
-                                handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
-                            >
-                                <ParentItemContainer justifyContent />
-                            </ParentPropSectionsContainer>
 
-                            <ParentPropSectionsContainer
-                                title="align-items"
-                                color="green"
-                                contents={["flex-start", "flex-end", "center", "stretch", "baseline"]}
-                                handleSelectItem={ (selected) => context.changeAlignItems(selected) }
-                            >
-                                <ParentItemContainer alignItems />
-                            </ParentPropSectionsContainer>
+                            <span id="justify-content">
+                                <ParentPropSectionsContainer
+                                    title="justify-content"
+                                    color="green"
+                                    contents={["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]}
+                                    handleSelectItem={ (selected) => context.changeJustifyContent(selected) }
+                                >
+                                    <ParentItemContainer justifyContent />
+                                </ParentPropSectionsContainer>
+                            </span>
 
-                            <ParentPropSectionsContainer
-                                title="align-content"
-                                color="green"
-                                contents={["flex-start", "flex-end", "center", "stretch", "space-between", "space-around"]}
-                                handleSelectItem={ (selected) => context.changeAlignContent(selected) }
-                            >
-                                <ParentItemContainer alignContent itemAmount={8}/>
-                            </ParentPropSectionsContainer>
+                            <span id="align-items">
+                                <ParentPropSectionsContainer
+                                    title="align-items"
+                                    color="green"
+                                    contents={["flex-start", "flex-end", "center", "stretch", "baseline"]}
+                                    handleSelectItem={ (selected) => context.changeAlignItems(selected) }
+                                >
+                                    <ParentItemContainer alignItems />
+                                </ParentPropSectionsContainer>
+                            </span>
 
+                            <span id="align-content">
+                                <ParentPropSectionsContainer
+                                    title="align-content"
+                                    color="green"
+                                    contents={["flex-start", "flex-end", "center", "stretch", "space-between", "space-around"]}
+                                    handleSelectItem={ (selected) => context.changeAlignContent(selected) }
+                                >
+                                    <ParentItemContainer alignContent itemAmount={8}/>
+                                </ParentPropSectionsContainer>
+                            </span>
 
-                            <ParentPropSectionsContainer
-                                title="flex-wrap"
-                                color="green"
-                                contents={["no-wrap", "wrap", "wrap-reverse"]}
-                                handleSelectItem={ (selected) => context.changeFlexWrap(selected) }
-                            >
-                                <ParentItemContainer flexWrap itemAmount={8}/>
-                            </ParentPropSectionsContainer>
+                            <span id="flex-wrap">
+                                <ParentPropSectionsContainer
+                                    title="flex-wrap"
+                                    color="green"
+                                    contents={["no-wrap", "wrap", "wrap-reverse"]}
+                                    handleSelectItem={ (selected) => context.changeFlexWrap(selected) }
+                                >
+                                    <ParentItemContainer flexWrap itemAmount={8}/>
+                                </ParentPropSectionsContainer>
+                            </span>
 
 
                             

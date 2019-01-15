@@ -18,7 +18,7 @@ class Nav extends Component {
                             <DropdownMenu 
                                 hover
                                 color="purple"
-                                header={ !context.state.isMobileWidth ? "FLEX-DIRECTION:" : null }
+                                header={ !context.state.isMobileWidth ? "FLEX-DIRECTION" : null }
                                 handleSelectItem={(selected) => context.updateFlexDirection(selected)}
                                 content={["row", "column", "row-reverse", 'column-reverse']}
                             />
@@ -26,8 +26,10 @@ class Nav extends Component {
                                 className="goto"
                                 // hover
                                 color="purple"
-                                header={ !context.state.isMobileWidth ? "navigation:" : null }
+                                header={ !context.state.isMobileWidth ? "NAVIGATION" : null }
                                 handleSelectItem={(selected) => context.updateNavigation(selected)}
+                                noDisplaySelected
+                                defaultDisplay="Go To:"
                                 content={["PARENT PROPERTIES", "justify-content", "align-items", 'align-content', 'flex-wrap', 'CHILD PROPERTIES', 'order', 'align-self', 'grow-shrink-basis']}
                             />
                             </div>

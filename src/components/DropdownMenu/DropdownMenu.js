@@ -43,7 +43,7 @@ class DropdownMenu extends Component {
                     <span className="topHeader">{this.props.header.toUpperCase()}</span> : null }
                     <button className="toggleBtn" onClick={this.toggleContent} >
                         <div className="buttonDisplay">
-                            <span className="text">{ this.state.selected || this.props.defaultDisplay || this.props.content[0] }</span>
+                            <span className="text">{ (!this.props.noDisplaySelected) ? this.state.selected || this.props.defaultDisplay || this.props.content[0] : this.props.defaultDisplay }</span>
                             <span className="arrow">&#9660;</span>
                         </div>
                     </button><br />
@@ -52,7 +52,7 @@ class DropdownMenu extends Component {
                             return (
                                 <div 
                                     key={item} 
-                                    className={(item === this.state.selected || !this.state.selected && item === this.props.content[0]) ? "selected item" : "notSelected item"}
+                                    className={((item === this.state.selected || !this.state.selected && item === this.props.content[0]) && !this.props.noDisplaySelected) ? "selected item" : "notSelected item"}
                                     onClick={() => this.itemSelect(item)}
                                     onMouseEnter={() => this.hoverItem(item)}
                                 >
