@@ -63,6 +63,7 @@ const StyledPropertySectionContainer = styled.div`
     margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
+
     .title {
         color: ${props => props.theme[props.color].title};
         font-family: ${props => props.theme.font.main};

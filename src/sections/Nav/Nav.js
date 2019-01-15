@@ -17,17 +17,18 @@ class Nav extends Component {
                             <div className="dropdowns">
                             <DropdownMenu 
                                 hover
-                                color="blue"
-                                header="FLEX-DIRECTION:"
+                                color="purple"
+                                header={ !context.state.isMobileWidth ? "FLEX-DIRECTION:" : null }
                                 handleSelectItem={(selected) => context.updateFlexDirection(selected)}
-                                content={["row", "column", "row-reverse", 'column-revers']}
+                                content={["row", "column", "row-reverse", 'column-reverse']}
                             />
                             <DropdownMenu 
                                 className="goto"
-                                hover
-                                color="blue"
-                                handleSelectItem={(selected) => context.updateFlexDirection(selected)}
-                                content={["row", "column", "row-reverse", 'column-revers']}
+                                // hover
+                                color="purple"
+                                header={ !context.state.isMobileWidth ? "navigation:" : null }
+                                handleSelectItem={(selected) => context.updateNavigation(selected)}
+                                content={["PARENT PROPERTIES", "justify-content", "align-items", 'align-content', 'flex-wrap', 'CHILD PROPERTIES', 'order', 'align-self', 'grow-shrink-basis']}
                             />
                             </div>
                         </StyledNav>

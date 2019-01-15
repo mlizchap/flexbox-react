@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ParentProperties from './sections/ParentProperties/ParentProperties';
-import DropdownMenu from './components/DropdownMenu/DropdownMenu';
 import Header from './sections/Header/Header';
-import Navbar from './sections/Navbar/Navbar';
-import PropertySectionContainer from './components/PropertySectionContainer/PropertySectionContainer';
-import ChildCardSingleProp from './components/ChildCardSingleProp/ChildCardSingleProp';
 import ChildProperties from './sections/ChildProperties/ChildProperties';
 import Nav from './sections/Nav/Nav';
 
@@ -14,11 +10,9 @@ class App extends Component {
     return (
       <div className="App" style={{width: '100%'}}>
         <Header />
-        {/* <Navbar /> */}
         <Nav />    
+        <div style={{marginTop: '25px'}}><ParentProperties /></div>
         <ChildProperties />
-
-        <ParentProperties />
       </div>
     );
   }

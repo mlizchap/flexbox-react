@@ -76,7 +76,7 @@ DropdownMenu.PropTypes = {
 }
 
 const StyledDropDownMenu = styled.div`
-    width: ${props => props.width || '200px'};
+    width: ${props => props.width || '150px'};
     // background-color: blue;
     text-align: left;
     .topHeader {
@@ -85,14 +85,14 @@ const StyledDropDownMenu = styled.div`
         display: inline-block;
         margin: 0;
         background-color: white;
-        color: ${props => props.theme[props.color].dark};
+        color: #424247;
         font-size: 9pt;
         padding: 2px 0px;
         font-family: ${props => props.theme.font.title};
         letter-spacing: .1rem;
     }
     .toggleBtn {
-        width: ${props => props.width || '200px'};
+        width: ${props => props.width || '150px'};
         border: none;
         font-family: ${props => props.theme.font.title};
         padding: 3px;
@@ -113,11 +113,11 @@ const StyledDropDownMenu = styled.div`
         flex-grow: 1;
     }
     .content {
-        width: ${props => props.width || '200px'};
+        width: ${props => props.width || '150px'};
         
         position: absolute;
         z-index: 100;
-        font-size: 10pt;
+        font-size: 8pt;
         font-family: ${props => props.theme.font.main};
     }
     .item {
@@ -130,8 +130,6 @@ const StyledDropDownMenu = styled.div`
     }
     .notSelected {
         background-color: ${props => props.theme[props.color].light};
-        background-color: white;
-
         color: ${props => props.theme[props.color].dark};
         &:hover {
             background-color: ${props => props.theme[props.color].hover};

@@ -23,7 +23,6 @@ class Navbar extends Component {
                                 handleSelectItem={(selected) => context.updateFlexDirection(selected)}
                                 content={["row", "column", "row-reverse", 'column-revers']}
                             />
-
                         </StyledNavbar>
                     )
                 }}

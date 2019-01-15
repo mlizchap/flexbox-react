@@ -1,6 +1,8 @@
 export const theme = {
     blue: {
         // old
+        mainTitle: '#5975a5',
+        background: '#f2f6fc',
         title: '#a0c4ff',
         main: '#9eb5ed',
         dark: '#15436d',
@@ -27,8 +29,16 @@ export const theme = {
         hover: '#e1f7ef',
         item: '#cbede0',
         title: '#bcfff3',
-        background: '#fafff7',
+        background: '#fcfffc',
         mainTitle: '#89af9b',
+    },
+    purple: {
+        title: '#65666D',
+        main: '#4c4f54',
+        dark: '#e2dced',
+        highlight: '#65666D',
+        hover: '#65666D',
+        light: '#686875',
     },
     light: {
         light: 'orange',

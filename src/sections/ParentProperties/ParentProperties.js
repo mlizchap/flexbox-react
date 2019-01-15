@@ -18,8 +18,10 @@ class ParentProperties extends Component {
             <Context.Consumer>
                 {context => {
                     return (
-                        <StyledProperties>
-                            <span className="mainTitle">PARENT PROPERTIES</span>
+                        <StyledProperties isMobile={context.state.isMobileWidth}>
+                            <span id="PARENT%20PROPERTIES" className="mainTitle">
+                                <span className="titleText">PARENT PROPERTIES</span>
+                            </span>
                             <ParentPropSectionsContainer
                                 title="justify-content"
                                 color="green"
@@ -71,24 +73,27 @@ export default ParentProperties;
 
 const StyledProperties = styled.div`    
     max-width: 500px;
-    text-align: left;
+    
     width: 90%;
     padding: 0 5%;
     margin-right: auto;
     margin-left: auto;
-    background-color: ${props => props.theme.green.background};
+    border: ${props => !props.isMobile ? `1px solid ${props.theme.green.mainTitle}` : null };
+    background: ${props => props.theme.green.background};
     .mainTitle {
         // width: 80%;
         font-size: 20pt;
         color: ${props => props.theme.green.mainTitle};
         font-family: ${props => props.theme.font.title};
-        font-weight: 800;
         display: flex;
         padding: 10px 0px;
-        // background-color: orange;
         margin-right: auto;
         margin-left: auto;
-
+        text-align: center;
+    }
+    .titleText {
+        margin-right: ${props => props.isMobile ? `auto` : null};
+        margin-left: ${props => props.isMobile ? `auto` : null};
     }
 `
 

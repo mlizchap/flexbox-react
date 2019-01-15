@@ -44,7 +44,6 @@ class Provider extends Component {
     changeJustifyContent = (selected) => {
         this.setState({ 
             parentProps: {...this.state.parentProps, justifyContent: selected },
-            
         })
     }
     changeAlignItems = (selected) => {
@@ -86,6 +85,12 @@ class Provider extends Component {
             childProps: {...this.state.childProps, flexBasis: {...this.state.childProps.flexBasis, [letter]: value}}
         })
     }
+    updateNavigation = (selected) => {
+        
+        window.location.href = `#${selected}`; 
+        this.state.isMobileWidth ? window.scrollBy(0, -75) : window.scrollBy(0, -60);
+        console.log(window.location.href)
+    }
     render() {
         return (
             <Context.Provider
@@ -100,7 +105,8 @@ class Provider extends Component {
                     changeAlignSelf: this.changeAlignSelf,
                     changeFlexGrow: this.changeFlexGrow,
                     changeFlexShrink: this.changeFlexShrink,
-                    changeFlexBasis: this.changeFlexBasis
+                    changeFlexBasis: this.changeFlexBasis,
+                    updateNavigation: this.updateNavigation
                 }}
             >
                 {this.props.children}    
