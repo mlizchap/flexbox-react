@@ -13,14 +13,16 @@ class SinglePropMobile extends Component {
     render() {
         return (
             <StyledChildCard letter={this.state.currentLetter}>
+                <div className="letter">
                 <DropdownMenu 
                     width="50px"
                     content={["a", "b", "c"]}
                     color="blue"
+                    defaultDisplay="a"
                     handleSelectItem={(selected) => this.setState({ currentLetter: selected })}
                 />
+                </div>
                 <div className="property">
-                    {/* <span className="propTitle">{this.props.propName}</span> */}
                     <DropdownMenu 
                         hover
                         width="100px"

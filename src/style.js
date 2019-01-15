@@ -3,14 +3,13 @@ export const theme = {
         mainTitle: '#5975a5',
         background: '#f2f6fc',
         title: '#a0c4ff',
-        main: '#9eb5ed',
+        main: 'white',
         dark: '#15436d',
         highlight: '#398fdd',
         hover: '#b4c3e8',
-        light: '#ced7ef',
+        light: 'white',
         a: {
             light: "#91BBFF",
-            
         },
         b: {
             light: '#BFD4FF'
@@ -21,7 +20,7 @@ export const theme = {
     },
     green: {
         main: '#c5e5d5',
-        light: '#d4fcee',
+        light: '#fcfffc',
         dark: '#0c6d4b',
         hover: '#e1f7ef',
         item: '#cbede0',
@@ -38,14 +37,14 @@ export const theme = {
         light: '#5f5e63',
     },
     light: {
-        light: 'orange',
+        light: 'white',
         dark: '#4c4f54',
         hover: '#d8e7ff',
         main: 'white',
         title: "blue"
     },
     dark: {
-        light: 'orange',
+        light: 'white',
         dark: '#4c4f54',
         hover: '#d8e7ff',
         main: 'white',

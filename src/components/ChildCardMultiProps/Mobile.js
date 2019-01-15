@@ -84,11 +84,11 @@ const StyledChildCard = styled.div`
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-top: 10px;
     .properties {
         line-height: 20px;
-        margin-top: 15px;
+        margin-top: 10px;
         width: 100%;
         display: flex;
         flex-direction: column;

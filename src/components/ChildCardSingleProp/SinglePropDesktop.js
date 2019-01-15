@@ -23,14 +23,13 @@ class SinglePropDesktop extends Component {
                 {(letters.map(letter => {
                     console.log("VALL", this.props.propValue[letter])
                     return (
-                        <StyledChildCard letter={this.state.currentLetter}>
+                        <StyledChildCard letter={this.state.currentLetter} letterBgColor={letter}>
                         <div className="propTitle">{letter}</div>
                         <div className="property">
                             <DropdownMenu 
                                 hover
                                 width="100px"
                                 color="blue"
-                                // defaultValue="$$"
                                 defaultDisplay={this.props.propValue[letter]}
                                 handleSelectItem={(selected) => this.handleSelect(selected, letter)}
                                 {...this.props}
@@ -53,11 +52,11 @@ const StyledChildCardContainer = styled.div`
 `
 const StyledChildCard = styled.div`
     font-family: ${props => props.theme.font.main}
-    width: 140px;
-    background-color: ${props => props.theme.blue[props.letter].light};
+    width: 100px;
+    background-color: ${props => props.theme.blue[props.letterBgColor].light}
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 10px;
     align-items: center;
     margin-right: auto;
     margin-left: auto;

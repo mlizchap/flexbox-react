@@ -82,14 +82,15 @@ const StyledChildCard = styled.div`
     background-color: ${props => props.theme.blue[props.letter].light};
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 5px 10px;
+    padding-top: 10px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-top: 10px;
     .properties {
         line-height: 20px;
-        margin-top: 15px;
+        margin-top: 5px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -98,7 +99,7 @@ const StyledChildCard = styled.div`
         align-items: center;
     }
     .prop {
-        font-size: 10pt;
+        font-size: 9pt;
         line-height: 25px;
         display: flex;
         width: 100%;
