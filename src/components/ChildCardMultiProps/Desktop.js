@@ -88,6 +88,7 @@ const StyledChildCard = styled.div`
     margin-left: auto;
     margin-bottom: 10px;
     margin-top: 10px;
+
     .properties {
         line-height: 20px;
         margin-top: 5px;
