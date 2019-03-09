@@ -1,13 +1,13 @@
 {
-  "main.css": "/flexbox-react/static/css/main.27f1d301.chunk.css",
-  "main.js": "/flexbox-react/static/js/main.32f86789.chunk.js",
-  "main.js.map": "/flexbox-react/static/js/main.32f86789.chunk.js.map",
-  "static/js/1.88e64fed.chunk.js": "/flexbox-react/static/js/1.88e64fed.chunk.js",
-  "static/js/1.88e64fed.chunk.js.map": "/flexbox-react/static/js/1.88e64fed.chunk.js.map",
+  "main.css": "/flexbox-react/static/css/main.2f438759.chunk.css",
+  "main.js": "/flexbox-react/static/js/main.e0ee6882.chunk.js",
+  "main.js.map": "/flexbox-react/static/js/main.e0ee6882.chunk.js.map",
+  "static/js/1.115b49b1.chunk.js": "/flexbox-react/static/js/1.115b49b1.chunk.js",
+  "static/js/1.115b49b1.chunk.js.map": "/flexbox-react/static/js/1.115b49b1.chunk.js.map",
   "runtime~main.js": "/flexbox-react/static/js/runtime~main.7ed31e41.js",
   "runtime~main.js.map": "/flexbox-react/static/js/runtime~main.7ed31e41.js.map",
-  "static/css/main.27f1d301.chunk.css.map": "/flexbox-react/static/css/main.27f1d301.chunk.css.map",
+  "static/css/main.2f438759.chunk.css.map": "/flexbox-react/static/css/main.2f438759.chunk.css.map",
   "index.html": "/flexbox-react/index.html",
-  "precache-manifest.68c0ab78819f8c8ce9227a2402838975.js": "/flexbox-react/precache-manifest.68c0ab78819f8c8ce9227a2402838975.js",
+  "precache-manifest.06b3c55f6ed97f500eaa49398dc19a2b.js": "/flexbox-react/precache-manifest.06b3c55f6ed97f500eaa49398dc19a2b.js",
   "service-worker.js": "/flexbox-react/service-worker.js"
 }
